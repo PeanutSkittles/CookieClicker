@@ -1,13 +1,17 @@
 // ==UserScript==
 // @name         Cookie Clicker 2.0
 // @namespace    http://tampermonkey.net/
-// @version      2.1
+// @version      2.2
 // @description  try to take over the world!
 // @author       Mike
 // @match        orteil.dashnet.org/cookieclicker/
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=dashnet.org
 // @grant        none
+// @downloadURL https://github.com/PeanutSkittles/CookieClicker/raw/main/Cookie%20Clicker%202.0.user.js
+// @updateURL   https://github.com/PeanutSkittles/CookieClicker/raw/main/Cookie%20Clicker%202.0.user.js
 // ==/UserScript==
+
+
 
 var div = "";
 
