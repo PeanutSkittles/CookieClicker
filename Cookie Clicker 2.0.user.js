@@ -31,6 +31,9 @@ var g_cookie_count = 0;
 var pop_wrinkler_switch = true;
 var pop_wrinkler_interval;
 
+var all_switch = true;
+
+
 var margin = '0px';
 
 function buy_upgrades_no_bullshit()
@@ -161,8 +164,8 @@ function click_and_count_g_cookie(click_g_cookie_button)
         pop_wrinkler_button.style.backgroundColor = pop_wrinkler_switch ? "grey" : "#FCFCFC";
         if(pop_wrinkler_switch)
         {
-         pop_wrinkler_interval = setInterval(() => Game.PopRandomWrinkler(),1800000);//pop wrinklers every 30 min
-         pop_wrinkler_switch = !pop_wrinkler_switch;
+            pop_wrinkler_interval = setInterval(() => Game.PopRandomWrinkler(),1800000);//pop wrinklers every 30 min
+            pop_wrinkler_switch = !pop_wrinkler_switch;
         }
         else
         {
@@ -174,6 +177,33 @@ function click_and_count_g_cookie(click_g_cookie_button)
     pop_wrinkler_button.style.margin = margin;
     pop_wrinkler_button.style.borderRadius = "4px"
 //************************************************************************************************************************
-
+    let all_button = document.createElement("button");
+    all_button.innerHTML = "All";
+    all_button.onclick = () =>
+    {
+        all_button.style.backgroundColor = all_switch ? "grey" : "#FCFCFC";
+        if(all_switch)
+        {
+            pop_wrinkler_button.click();
+            click_g_cookie_button.click();
+            buy_upgrade_button.click();
+            buy_product_button.click();
+            click_button.click();
+            all_switch = !all_switch;
+        }
+        else
+        {
+            pop_wrinkler_button.click();
+            click_g_cookie_button.click();
+            buy_upgrade_button.click();
+            buy_product_button.click();
+            click_button.click();
+            all_switch = !all_switch;
+        }
+    }
+    div.appendChild(all_button);
+    all_button.style.margin = margin;
+    all_button.style.borderRadius = "4px"
+//************************************************************************************************************************
 
 })();
