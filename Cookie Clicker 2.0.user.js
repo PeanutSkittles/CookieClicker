@@ -38,8 +38,9 @@ var margin = '0px';
 
 function buy_upgrades_no_bullshit()
 {
+    Game.storeBuyAll();
     var a = document.querySelector("#upgrade0").attributes[0].textContent;
-    if (a == "Game.UpgradesById[69].click(event);" || a == "Game.UpgradesById[84].click(event);")
+    if (a == "Game.UpgradesById[69].click(event);" || a == "Game.UpgradesById[84].click(event);" || a == "Game.UpgradesById[452].click(event);")
     {
         document.querySelector("#upgrade1").click();
     }
