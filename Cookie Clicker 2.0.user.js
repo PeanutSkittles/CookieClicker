@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Cookie Clicker 2.0
 // @namespace    http://tampermonkey.net/
-// @version      2.2
+// @version      2.21
 // @description  try to take over the world!
 // @author       Mike
 // @match        orteil.dashnet.org/cookieclicker/
