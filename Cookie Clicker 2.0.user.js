@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      2.2
 // @description  try to take over the world!
-// @author       Mike
+// @author       Alex
 // @match        orteil.dashnet.org/cookieclicker/
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=dashnet.org
 // @grant        none
