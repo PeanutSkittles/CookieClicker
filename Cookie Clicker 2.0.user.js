@@ -61,6 +61,8 @@ function buy_upgrades()
             || upgrade_id == "Game.UpgradesById[184].click(event);"
             || upgrade_id == "Game.UpgradesById[185].click(event);"
             || upgrade_id == "Game.UpgradesById[209].click(event);"
+            || upgrade_id == "Game.UpgradesById[765].click(event);"
+            || upgrade_id == "Game.UpgradesById[332].click(event);"
             )
             )
             {
