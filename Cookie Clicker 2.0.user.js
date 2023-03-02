@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Cookie Clicker 2.0
+// @name         Auto Cookie Clicker
 // @namespace    http://tampermonkey.net/
-// @version      2.23
+// @version      2.4
 // @description  try to take over the world!
 // @author       Mike
 // @match        orteil.dashnet.org/cookieclicker/
@@ -36,26 +36,37 @@ var all_switch = true;
 
 var margin = '0px';
 
-function buy_upgrades_no_bullshit()
+function buy_upgrades()
 {
-    Game.storeBuyAll();
+    //Game.storeBuyAll();
     Game.UpgradeDragon();
-    var a = document.querySelector("#upgrade0").attributes[0].textContent;
-    if (a == "Game.UpgradesById[69].click(event);" || a == "Game.UpgradesById[84].click(event);" || a == "Game.UpgradesById[452].click(event);")
+    var upgrades = document.querySelectorAll("[id*='upgrade']");
+    for (let i = 0; i < upgrades.length ; i++)
     {
-        document.querySelector("#upgrade1").click();
-    }
-    else
-    {
-        document.querySelector("#upgrade0").click();
-        document.querySelector("#upgrade2").click();
-    }
+        let upgrade_type = upgrades[i].attributes[1].textContent;
+        let upgrade_id = upgrades[i].attributes[0].textContent;
+        if(upgrade_type == "crate upgrade enabled")
+        {
+            if (
+            !(upgrade_id == "Game.UpgradesById[69].click(event);" 
+            || upgrade_id == "Game.UpgradesById[84].click(event);" 
+            || upgrade_id == "Game.UpgradesById[452].click(event);" 
+            || upgrade_id == "Game.UpgradesById[331].click(event);" 
+            || upgrade_id == "Game.UpgradesById[564].click(event);"
+            || upgrade_id == "Game.UpgradesById[333].click(event);"
+            || upgrade_id == "Game.UpgradesById[414].click(event);")
+            )
+            {
+                upgrades[i].click();
+            }
+        }
+    } 
 }
 
 function buy_best_product()
 {
    let a = document.querySelectorAll(".product.unlocked.enabled");
-    a[a.length-1].click();
+   a[a.length-1].click();
 }
 
 function click_and_count_g_cookie(click_g_cookie_button)
@@ -126,7 +137,7 @@ function click_and_count_g_cookie(click_g_cookie_button)
         buy_upgrade_button.style.backgroundColor = buy_upgrade_switch ? "grey" : "#FCFCFC";
         if(buy_upgrade_switch)
         {
-         buy_upgrade_interval = setInterval(() => buy_upgrades_no_bullshit(),10); //buy unlockable product
+         buy_upgrade_interval = setInterval(() => buy_upgrades(),10); //buy unlockable product
          buy_upgrade_switch = !buy_upgrade_switch;
         }
         else
