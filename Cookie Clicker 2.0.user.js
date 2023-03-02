@@ -38,7 +38,7 @@ var margin = '0px';
 
 function buy_upgrades()
 {
-    //Game.storeBuyAll();
+    Game.storeBuyAll();
     Game.UpgradeDragon();
     var upgrades = document.querySelectorAll("[id*='upgrade']");
     for (let i = 0; i < upgrades.length ; i++)
